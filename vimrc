@@ -12,6 +12,7 @@ set hlsearch
 set ruler
 set smartindent
 set nu
+set relativenumber
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir

@@ -5,7 +5,7 @@ My vimrc settings
 <b>Download vim mac or linux</b>
 ```console
 brew install vim
-sudo apt get vim
+sudo apt install vim
 ```
 
 <b>Access your vimrc</b>

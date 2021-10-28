@@ -54,6 +54,10 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
+  \ 'coc-python',
+  \ 'coc-java',
+  \ 'coc-omnisharp',
+  \ 'coc-clangd',
   \ ]
  
 colorscheme gruvbox

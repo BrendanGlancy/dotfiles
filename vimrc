@@ -58,6 +58,8 @@ let g:coc_global_extensions = [
   \ 'coc-java',
   \ 'coc-omnisharp',
   \ 'coc-clangd',
+  \ 'coc-react-refactor',
+  \ 'coc-vetur',
   \ ]
  
 colorscheme gruvbox

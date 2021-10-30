@@ -48,6 +48,7 @@ Inside init.vim make your vimrc
 ```console
 // make sure you're in nvim dir
 mkdir autoload
+cd autoload
 curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -o plug.vim
 ```
 

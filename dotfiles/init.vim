@@ -1,3 +1,32 @@
+" init autocmd
+autocmd!
+" set script encoding
+scriptencoding utf-8
+" stop loading config if it's on tiny or small
+if !1 | finish | endif
+
+" init autocmd
+autocmd!
+" set script encoding
+scriptencoding utf-8
+" stop loading config if it's on tiny or small
+if !1 | finish | endif
+
+" hello front end masters
+set path+=**
+
+" Nice menu when typing `:find *.py`
+set wildmode=longest,list,full
+set wildmenu
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
 syntax on
  
 set guicursor=
@@ -26,6 +55,23 @@ highlight ColorColumn ctermbg=green
 call plug#begin('~/.vim/plugged')
  
 Plug 'neoclide/coc.nvim', {'branch': 'relase'}
+" Plebvim lsp Plugins
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'onsails/lspkind-nvim'
+
+" Plug 'nvim-lua/completion-nvim'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+" Plug 'tjdevries/nlua.nvim'
+" Plug 'tjdevries/lsp_extensions.nvim'
+
+" Neovim Tree sitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'

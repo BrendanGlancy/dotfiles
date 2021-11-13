@@ -92,6 +92,9 @@ Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
+
+" autopair
+Plug 'jiangmiao/auto-pairs'
  
 call plug#end()
  

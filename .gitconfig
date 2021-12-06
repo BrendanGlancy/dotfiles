@@ -3,3 +3,5 @@
 [user]
 	name = brendanglancy
 	email = bglance68@gmail.com
+[core]
+	editor = nvim

@@ -42,6 +42,7 @@ set hlsearch
 set ruler
 set smartindent
 set nu
+set clipboard=unnamedplus
 set relativenumber
 set noswapfile
 set nobackup

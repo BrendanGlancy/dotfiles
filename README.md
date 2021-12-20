@@ -31,6 +31,8 @@ In vim
 
 # Wow, I guess I am now using Neovim
 
+Note: I wouldn't recommend using brew for this on linux or sudo apt get 
+Go to https://github.com/neovim/neovim/wiki/Installing-Neovim and follow directions
 ```console
 brew install neovim
 ```

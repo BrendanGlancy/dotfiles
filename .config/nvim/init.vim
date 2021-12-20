@@ -28,35 +28,14 @@ set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
 syntax on
- 
-set guicursor=
-set nohlsearch
-set hidden
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set ai
-set termguicolors
-set hlsearch
-set ruler
-set smartindent
-set nu
-set clipboard=unnamedplus
-set relativenumber
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set noshowmode
- 
+
+
 set colorcolumn=80
 highlight ColorColumn ctermbg=green
- 
+
 call plug#begin('~/.vim/plugged')
- 
-Plug 'neoclide/coc.nvim', {'branch': 'relase'}
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plebvim lsp Plugins
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -65,13 +44,15 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind-nvim'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+" dont have copilot access yet
+" Plug 'github/copilot.vim'
 
 
-" Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
-" Plug 'tjdevries/nlua.nvim'
-" Plug 'tjdevries/lsp_extensions.nvim'
+Plug 'tjdevries/nlua.nvim'
+Plug 'tjdevries/lsp_extensions.nvim'
 
 " Neovim Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -97,8 +78,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 " autopair
 Plug 'jiangmiao/auto-pairs'
+
+" Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
+
+" prettier
+Plug 'sbdchd/neoformat'
 
  if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -109,8 +102,11 @@ else
 endif
 
 call plug#end()
- 
- 
+
+
+let &runtimepath.=',' . expand("$HOME") . '/personal/git-worktree.nvim/master'
+let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
+
 " coc config
 let g:coc_global_extensions = [
   \ 'coc-snippets',
@@ -126,9 +122,26 @@ let g:coc_global_extensions = [
   \ 'coc-react-refactor',
   \ 'coc-vetur',
   \ ]
- 
-colorscheme gruvbox
-highlight Normal guibg=none
- 
-nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+
+au BufNewFile,BufRead *.es6 setf javascript
+" TypeScript
+au BufNewFile,BufRead *.tsx setf typescriptreact
+" Markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.mdx set filetype=markdown
+
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+augroup EN;
+
+autocmd User TelescopePreviewerLoaded setlocal wrap
+
+augroup dreadpirate
+    autocmd!
+    autocmd BufWritePre lua,cpp,c,h,hpp,cxx,cc Neoformat
+    autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+augroup END
+
+nnoremap <leader>Y gg"+yG

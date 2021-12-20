@@ -8,6 +8,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
+set ai
 set cursorline
 set nowrap
 set noswapfile
@@ -16,7 +17,11 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set termguicolors
+set relativenumber
 set scrolloff=8
+set ruler
+set hlsearch
+set clipboard+=unnamedplus
 " set noshowmode
 set signcolumn=yes
 set isfname+=@-@

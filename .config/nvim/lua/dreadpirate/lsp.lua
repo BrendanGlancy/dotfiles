@@ -1,4 +1,3 @@
-
 local sumneko_root_path = "/home/dreadpirate/personal/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
@@ -107,6 +106,8 @@ require("lspconfig").svelte.setup(config())
 require("lspconfig").solang.setup(config())
 
 require("lspconfig").cssls.setup(config())
+
+require("lspconfig").pyright.setup(config())
 
 require'lspconfig'.jdtls.setup{
    cmd = { 'jdtls' },

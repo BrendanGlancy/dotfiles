@@ -44,16 +44,27 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind-nvim'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
-" dont have copilot access yet
-" Plug 'github/copilot.vim'
-
+Plug 'github/copilot.vim'
+Plug 'ThePrimeagen/vim-be-good'
 
 Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'tjdevries/nlua.nvim'
 Plug 'tjdevries/lsp_extensions.nvim'
+Plug 'kamykn/spelunker.vim'
+Plug 'mfussenegger/nvim-jdtls'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 " Neovim Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -86,9 +97,15 @@ Plug 'autozimu/LanguageClient-neovim', {
 " autopair
 Plug 'jiangmiao/auto-pairs'
 
+
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
+
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " prettier
 Plug 'sbdchd/neoformat'
@@ -104,8 +121,10 @@ endif
 call plug#end()
 
 
+
 let &runtimepath.=',' . expand("$HOME") . '/personal/git-worktree.nvim/master'
 let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
+
 
 " coc config
 let g:coc_global_extensions = [
@@ -122,6 +141,13 @@ let g:coc_global_extensions = [
   \ 'coc-react-refactor',
   \ 'coc-vetur',
   \ ]
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
 au BufNewFile,BufRead *.es6 setf javascript
 " TypeScript
@@ -144,4 +170,5 @@ augroup dreadpirate
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup END
 
+nnoremap <F3>:set spell<CR>
 nnoremap <leader>Y gg"+yG

@@ -1,4 +1,3 @@
-
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local previewers = require("telescope.previewers")
@@ -22,7 +21,7 @@ require("telescope").setup({
                 ["<C-q>"] = actions.send_to_qflist,
             },
         },
-    },
+
     extensions = {
         fzy_native = {
             override_generic_sorter = false,
@@ -88,7 +87,6 @@ local function image_selector(prompt, cwd)
     end
 end
 
-M.anime_selector = image_selector("< Anime Bobs > ", "~/personal/anime")
 
 local function refactor(prompt_bufnr)
     local content = require("telescope.actions.state").get_selected_entry(
@@ -147,7 +145,7 @@ M.dev = function(opts)
     local ok, mod = pcall(loaded)
     if not ok then
         print("===================================================")
-        print("HEY FROSTY. YOUR CODE DOESNT WORK. THIS IS NOT ON ME")
+        print("HEY PRIME. YOUR CODE DOESNT WORK. THIS IS NOT ON ME")
         print("===================================================")
         return
     end
@@ -165,7 +163,7 @@ M.dev = function(opts)
     local mod_name = vim.split(dev, "/lua/")
     if #mod_name ~= 2 then
         print("===================================================")
-        print("HEY FROSTY. I DO NOT KNOW HOW TO FIND THIS FILE:")
+        print("HEY PRIME. I DO NOT KNOW HOW TO FIND THIS FILE:")
         print(dev)
         print("===================================================")
     end

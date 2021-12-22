@@ -1,4 +1,5 @@
 require("dreadpirate.telescope")
+require("dreadpirate.git-worktree")
 require("dreadpirate.lsp")
 
 P = function(v)

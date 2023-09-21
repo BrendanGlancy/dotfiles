@@ -1,16 +1,20 @@
+---@type ChadrcConfig
 local M = {}
 
-M.plugins = require("custom.plugins")
+-- Path to overriding theme and highlights files
+local highlights = require "custom.highlights"
 
 M.ui = {
-	-- theme stuff
-	theme = "tokyonight",
-	theme_toggle = { "chadracula", "one_light" },
+  theme = "tokyonight",
+  theme_toggle = { "tokyonight", "tokyodark" },
 
-	-- highlight groups!
-	hl_add = require("custom.highlights").new_hlgroups,
-	hl_override = require("custom.highlights").overridden_hlgroups,
-	transparency = true,
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
+
+M.plugins = "custom.plugins"
+
+-- check core.mappings for table structure
+M.mappings = require "custom.mappings"
 
 return M

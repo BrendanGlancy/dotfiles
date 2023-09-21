@@ -1,19 +1,7 @@
--- Dynamic terminal padding with/without nvim (for siduck's st only)
+-- local autocmd = vim.api.nvim_create_autocmd
 
--- replace string from file
-
-require("custom.commands")
-require("custom.options")
-
-local options = require("custom.chadrc")
--- if options.ui.transparency
-if options.ui.transparency then
-	vim.g.neovide_transparency = 0.2
-else
-	vim.g.neovide_transparency = 1
-end
-vim.diagnostic.config({
-	virtual_text = false,
-})
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+-- Auto resize panes when resizing nvim window
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "tabdo wincmd =",
+-- })

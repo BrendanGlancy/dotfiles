@@ -50,16 +50,15 @@ Before proceeding with the installation, ensure the following prerequisites are 
     git clone https://github.com/BrendanGlancy/dotfiles.git ~/.config/nvim --depth 1 && nvim
     ```
 
-## LSP Commands
+## Common Commands
 
     ```makefile
     gD = go to declaration
     gd = go to definition
     gi = implementation
-    ;f = find files
-    ;r = rip grep
+    ff = find files
+    fw = rip grep
     ;b = browse
-    sf = defx search
     ```
 
 [Helpful link](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) to find lspconfigs

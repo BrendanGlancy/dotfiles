@@ -93,7 +93,7 @@ local plugins = {
         "gopls",
         -- javascript
         "prettier",
-        "eslint",
+        "eslint-lsp",
       }
     }
   },

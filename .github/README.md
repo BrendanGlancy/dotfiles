@@ -61,4 +61,9 @@ Before proceeding with the installation, ensure the following prerequisites are 
     ;b = browse
     ```
 
+## Change Clangd format
+```bash
+~/.local/share/nvim/mason/bin/clang-format --style Google --dump-config > .clang-format
+```
+
 [Helpful link](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) to find lspconfigs

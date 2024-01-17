@@ -22,24 +22,6 @@ M.dap = {
   }
 }
 
-M.dap_go = {
-  plugin = true,
-  n = {
-    ["<leader>dgt"] = {
-      function()
-        require('dap-go').debug_test()
-      end,
-      "Debug go test"
-    },
-    ["<leader>dgl"] = {
-      function()
-        require('dap-go').debug_last()
-      end,
-      "Debug last go test"
-    }
-  }
-}
-
 M.dap_python = {
   plugin = true,
   n = {
@@ -48,20 +30,6 @@ M.dap_python = {
         require("dap-python").test_method()
       end,
       "Debug python run",
-    }
-  }
-}
-
-M.gopher = {
-  plugin = true,
-  n = {
-    ["<leader>gat"] = {
-      "<cmd> GoTagAdd json <CR>",
-      "Add json struct tags"
-    },
-    ["<leader>gay"] = {
-      "<cmd> GoTagAdd yaml <CR>",
-      "Add yaml struct tags"
     }
   }
 }

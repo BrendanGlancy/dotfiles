@@ -7,6 +7,7 @@ local options = {
     "cpp",
     "c",
     "markdown",
+    "r",
   },
 
   highlight = {

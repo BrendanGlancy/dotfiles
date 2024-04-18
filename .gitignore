@@ -8,7 +8,15 @@
 !/.github/
 
 # In the nvim directory, ignore everything except the specified directories and files
-/nvim/*
+!/nvim/plugin/
+!/nvim/custom/
+!/nvim/spell/
+!/nvim/ftplugin/
+!/nvim/syntax/
+!/nvim/coc-settings.json
+!/nvim/.luarc.json
+!/nvim/lazy-lock.json
+!/nvim/after/
 
 # Ignore .DS_Store everywhere
 **/.DS_Store

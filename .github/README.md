@@ -36,6 +36,8 @@ Before proceeding with the installation, ensure the following prerequisites are 
     ```bash
     rm -rf ~/.config/nvim
     rm -rf ~/.local/share/nvim
+    rm -rf ~/.config/kitty
+    rm -rf ~/.config/neofetch
     ```
 
 **Windows**
@@ -47,12 +49,12 @@ Before proceeding with the installation, ensure the following prerequisites are 
 
 4. Clone the repo
     ```bash
-    git clone https://github.com/BrendanGlancy/dotfiles.git ~/.config/nvim --depth 1 && nvim
+    git clone https://github.com/BrendanGlancy/dotfiles.git ~/.config/ --depth 1 && nvim
     ```
 
 ## Common Commands
 
-    ```makefile
+    ```py
     gD = go to declaration
     gd = go to definition
     gi = implementation
@@ -62,6 +64,7 @@ Before proceeding with the installation, ensure the following prerequisites are 
     ```
 
 ## Change Clangd format
+
 ```bash
 ~/.local/share/nvim/mason/bin/clang-format --style Google --dump-config > .clang-format
 ```

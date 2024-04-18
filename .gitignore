@@ -5,6 +5,7 @@
 !/neofetch/
 !/kitty/
 !/nvim/
+!/.github/
 
 # In the nvim directory, ignore everything except the specified directories and files
 /nvim/*

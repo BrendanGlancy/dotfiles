@@ -15,7 +15,6 @@
 !/nvim/syntax/
 !/nvim/coc-settings.json
 !/nvim/.luarc.json
-!/nvim/lazy-lock.json
 !/nvim/after/
 
 # Ignore .DS_Store everywhere

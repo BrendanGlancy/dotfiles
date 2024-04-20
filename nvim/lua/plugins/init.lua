@@ -3,6 +3,7 @@
 local default_plugins = {
 
   "nvim-lua/plenary.nvim",
+  "github/copilot.vim",
 
   {
     "NvChad/base46",

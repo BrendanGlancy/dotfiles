@@ -49,3 +49,9 @@ lspconfig.asm_lsp.setup {
   capabilities = capabilities,
   filetypes = { "asm" },
 }
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "rust" },
+}

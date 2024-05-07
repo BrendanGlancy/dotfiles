@@ -76,6 +76,8 @@ local plugins = {
         -- javascript
         "prettier",
         "eslint-lsp",
+        -- rust
+        "rust-analyzer",
       }
     }
   },

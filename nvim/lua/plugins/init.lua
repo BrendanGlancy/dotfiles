@@ -3,7 +3,17 @@
 local default_plugins = {
 
   "nvim-lua/plenary.nvim",
-  "github/copilot.vim",
+  {
+    "github/copilot.vim",
+    lazy = false,
+  },
+
+  -- { 
+  --   "bluz71/vim-moonfly-colors", 
+  --   name = "moonfly", 
+  --   lazy = false, 
+  --   priority = 1000 
+  -- },
 
   {
     "NvChad/base46",

@@ -8,7 +8,9 @@ local options = {
     "c",
     "markdown",
     "javascript",
+    "html",
     "asm",
+    "rust",
   },
 
   highlight = {

@@ -7,6 +7,7 @@
 !/nvim/
 !/i3/
 !/.github/
+!/config.sh/
 
 # In the nvim directory, ignore everything except the specified directories and files
 !/nvim/plugin/

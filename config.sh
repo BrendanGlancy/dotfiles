@@ -72,3 +72,12 @@ mv nvim ~/.config
 mv kitty ~/.config
 mv neofetch ~/.config
 mv i3 ~/.config
+
+# Font
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip
+ Update the font cache
+fc-cache -fv

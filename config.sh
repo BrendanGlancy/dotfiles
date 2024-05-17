@@ -4,6 +4,8 @@
 sudo apt install zsh
 sudo apt install git-all
 
+sudo apt install xclip
+sudo apt install neovim xclip
 sudo apt install curl
 sudo apt install wget
 

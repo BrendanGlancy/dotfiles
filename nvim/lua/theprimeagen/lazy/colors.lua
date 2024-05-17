@@ -4,7 +4,12 @@ function ColorMyPencils(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    -- Set line number colors
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "#89ddff" })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "none" })
 
+    -- Disable sign column
+    vim.wo.signcolumn = "no"
 end
 
 return {

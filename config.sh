@@ -14,10 +14,7 @@ sudo apt install neofetch
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Chrome and Discord
-wget https://discord.com/api/download?platform=linux&format=deb
-sudo dpkg -i discord-0.0.54.deb
-
+# Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
@@ -81,5 +78,9 @@ cd ~/.local/share/fonts
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip
- Update the font cache
 fc-cache -fv
+
+# Git signin
+
+wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.5.0/gcm-linux_amd64.2.5.0.deb
+sudo dpkg -i gcm-linux_amd64.2.5.0.deb

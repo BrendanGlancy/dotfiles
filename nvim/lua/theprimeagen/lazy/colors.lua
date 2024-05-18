@@ -14,9 +14,9 @@ end
 
 return {
     {
-        "rebelot/kanagawa.nvim",
+        "folke/tokyonight.nvim",
         config = function()
-            require("kanagawa").setup({
+            require("tokyonight").setup({
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 -- style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -28,7 +28,7 @@ return {
                     comments = { italic = false },
                     keywords = { italic = false },
                     -- Background styles. Can be "dark", "transparent" or "normal"
-                    sidebars = "transparent", -- style for sidebars, see below
+                    sidebars = "dark", -- style for sidebars, see below
                     floats = "dark", -- style for floating windows
                 },
             })

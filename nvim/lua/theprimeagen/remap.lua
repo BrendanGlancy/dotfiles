@@ -47,7 +47,8 @@ vim.keymap.set(
     "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim<CR>");
+vim.keymap.set("n", "<leader>vnp", "<cmd>e ~/.config/nvim<CR>");
+vim.keymap.set("n", "<leader>vkp", "<cmd>e ~/.config/kitty<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader>rk", "<cmd>:silent !kill -SIGUSR1 $(pgrep -a kitty)<CR>");

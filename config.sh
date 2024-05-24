@@ -55,10 +55,14 @@ rustc --version
 # Nvim shit
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
-./nvim.appimage
+./nvim.appimage --appimage-extract
+./squashfs-root/AppRun --version
 
-mkdir -p /opt/nvim
-mv nvim.appimage /opt/nvim/nvim
+# Optional: exposing nvim globally.
+sudo mv squashfs-root /
+sudo rm /usr/bin/nvim
+sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+nvim
 
 echo 'export PATH="$PATH:/opt/nvim/"' >> ~/.zshrc
 echo 'alias vim = "nvim' >> ~/.zshrc

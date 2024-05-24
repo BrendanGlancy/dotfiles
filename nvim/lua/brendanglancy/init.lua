@@ -1,18 +1,7 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
+require("brendanglancy.set")
+require("brendanglancy.remap")
 
-require("theprimeagen.lazy_init")
-
--- DO.not
--- DO NOT INCLUDE THIS
-
--- If i want to keep doing lsp debugging
--- function restart_htmx_lsp()
---     require("lsp-debug-tools").restart({ expected = {}, name = "htmx-lsp", cmd = { "htmx-lsp", "--level", "DEBUG" }, root_dir = vim.loop.cwd(), });
--- end
-
--- DO NOT INCLUDE THIS
--- DO.not
+require("brendanglancy.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})

@@ -33,35 +33,36 @@ Before proceeding with the installation, ensure the following prerequisites are 
 3. Delete your old configuation
 
 **Linux / MacOS (Unix)**
-    ```bash
-    rm -rf ~/.config/nvim
-    rm -rf ~/.local/share/nvim
-    rm -rf ~/.config/kitty
-    rm -rf ~/.config/neofetch
-    ```
+```bash
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.config/kitty
+rm -rf ~/.config/neofetch
+```
 
 **Windows**
-    ```cmd
-    rd -r ~\AppData\Local\nvim
-    rd -r ~\AppData\Local\nvim-data
-    ```
+```pwsh
+rd -r ~\AppData\Local\nvim
+rd -r ~\AppData\Local\nvim-data
+```
 
 
 4. Clone the repo
-    ```bash
-    git clone https://github.com/BrendanGlancy/dotfiles.git ~/.config/ --depth 1 && nvim
-    ```
+```
+git clone https://github.com/BrendanGlancy/dotfiles.git ~/.config/ --depth 1 && nvim
+```
 
 ## Common Commands
 
-    ```py
-    gD = go to declaration
-    gd = go to definition
-    gi = implementation
-    ff = find files
-    fw = rip grep
-    ;b = browse
-    ```
+```
+gD = go to declaration
+gd = go to definition
+gi = implementation
+ff = find files
+fw = rip grep
+fs = grep
+K = definition
+```
 
 ## Change Clangd format
 

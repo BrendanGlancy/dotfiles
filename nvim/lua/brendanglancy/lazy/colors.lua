@@ -29,7 +29,7 @@ return {
                     keywords = { italic = false },
                     -- Background styles. Can be "dark", "transparent" or "normal"
                     sidebars = "dark", -- style for sidebars, see below
-                    floats = "dark", -- style for floating windows
+                    floats = "storm", -- style for floating windows
                 },
             })
         end
@@ -40,10 +40,10 @@ return {
         name = "kanagawa",
         config = function()
             require('kanagawa').setup({
-                disable_background = true,
-                styles = {
-                    italic = false
-                },
+                commentStyle = { italic = false },
+                keywordStyle = { italic = false },
+                statementStyle = { bold = false },
+                theme = "wave", -- Load "wave" theme when 'background' option is not set
             })
 
             vim.cmd("colorscheme kanagawa")

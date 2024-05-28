@@ -9,9 +9,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Autostart Google Chrome Stable
+exec --no-startup-id google-chrome-stable
+
+# Autostart Kitty terminal emulator
+exec --no-startup-id kitty
+
 set $mod Mod4
-exec --no-startup-id xset r rate 200 45
-# exec --no-startup-id xrandr --output DP-1 --rotate left
+exec --no-startup-id xset r rate 200 30
 exec --no-startup-id xrandr --output DP-0 --rotate left
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

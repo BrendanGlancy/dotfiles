@@ -7,9 +7,6 @@ tr
 cp
 ls
 grep
-xargs
-rg
-ps
 mv
 kill
 lsof
@@ -18,7 +15,6 @@ head
 tail
 tar
 cp
-rm
 rename
 jq
 cat

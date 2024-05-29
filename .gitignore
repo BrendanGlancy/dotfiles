@@ -4,6 +4,7 @@
 # But do not ignore the neofetch, kitty, and nvim directories
 !/neofetch/
 !/tmux/
+!/scripts/
 !/kitty/
 !/nvim/
 !/i3/

@@ -9,6 +9,7 @@
 !/nvim/
 !/i3/
 !/.github/
+!/.zsh_profile/
 # I dont want to ignore this but it a file
 !/config.sh
 

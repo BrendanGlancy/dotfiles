@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Get the directory of the script itself
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_NAME="$(basename "$0")"
+
+# Move all files in the script directory, excluding this script, to /usr/local/bin
+for file in "$SCRIPT_DIR"/*; do
+  if [[ "$(basename "$file")" != "$SCRIPT_NAME" ]]; then
+    sudo cp "$file" /usr/local/bin/
+  fi
+done

@@ -38,7 +38,6 @@ return {
                         capabilities = capabilities
                     }
                 end,
-
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
@@ -49,6 +48,16 @@ return {
                                     globals = { "vim", "it", "describe", "before_each", "after_each" },
                                 }
                             }
+                        }
+                    }
+                end,
+
+                ["clangd"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.clangd.setup {
+                        capabilities = capabilities,
+                        settings = {
+                            single_file_support = true
                         }
                     }
                 end,

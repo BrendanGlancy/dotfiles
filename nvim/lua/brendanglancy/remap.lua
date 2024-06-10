@@ -57,3 +57,6 @@ vim.keymap.set("n", "<leader>rk", "<cmd>:silent !kill -SIGUSR1 $(pgrep -a kitty)
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- dont use esc man
+vim.keymap.set("i", "<Esc>", "use c-c idiot")

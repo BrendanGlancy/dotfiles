@@ -1,5 +1,6 @@
 require("brendanglancy.set")
 require("brendanglancy.remap")
+require("brendanglancy.terminal")
 
 require("brendanglancy.lazy_init")
 

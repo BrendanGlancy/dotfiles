@@ -31,6 +31,8 @@ return {
                 "tsserver",
                 "gopls",
                 "clangd",
+                "pyright",
+                "svelte-language-server",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -48,16 +50,6 @@ return {
                                     globals = { "vim", "it", "describe", "before_each", "after_each" },
                                 }
                             }
-                        }
-                    }
-                end,
-
-                ["clangd"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.clangd.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            single_file_support = true
                         }
                     }
                 end,

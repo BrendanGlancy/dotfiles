@@ -33,6 +33,7 @@ return {
                 "clangd",
                 "pyright",
                 "svelte-language-server",
+                "css-lsp",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

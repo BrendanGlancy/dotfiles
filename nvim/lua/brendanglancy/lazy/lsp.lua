@@ -26,14 +26,17 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "lua_ls",
-                "rust_analyzer",
+                -- jerb
                 "tsserver",
+                "svelte-language-server",
+                -- toy lang
+                "lua_ls",
+                "css-lsp",
+                "pyright",
+                -- chad lang
                 "gopls",
                 "clangd",
-                "pyright",
-                "svelte-language-server",
-                "css-lsp",
+                "rust_analyzer",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

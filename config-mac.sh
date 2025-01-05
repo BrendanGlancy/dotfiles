@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Detect Operating System
 OS=$(uname -s)
 
@@ -35,8 +38,8 @@ if [[ "$OS" == "Linux" ]]; then
 fi
 
 # LLVM Installation
-$INSTALL_CMD llvm
-clang --version
+# $INSTALL_CMD llvm
+# clang --version
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
@@ -89,6 +92,7 @@ cd dotfiles
 mv nvim ~/.config
 mv kitty ~/.config
 mv neofetch ~/.config
+mv tmux ~/.config
 
 # Git Credential Manager
 if [[ "$OS" == "Linux" ]]; then

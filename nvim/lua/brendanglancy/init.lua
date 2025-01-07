@@ -31,6 +31,7 @@ autocmd('TextYankPost', {
     end,
 })
 
+-- trailing white space
 autocmd({ "BufWritePre" }, {
     group = ThePrimeagenGroup,
     pattern = "*",

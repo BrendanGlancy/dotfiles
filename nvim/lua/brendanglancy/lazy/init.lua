@@ -1,5 +1,4 @@
 return {
-
     {
         "nvim-lua/plenary.nvim",
         name = "plenary"
@@ -7,6 +6,7 @@ return {
 
     -- "github/copilot.vim",
     "eandrju/cellular-automaton.nvim",
+    "luarocks/luarocks",
     "gpanders/editorconfig.nvim",
+    "rest-nvim/rest.nvim",
 }
-

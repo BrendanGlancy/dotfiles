@@ -9,8 +9,10 @@
 !/nvim/
 !/i3/
 !/.github/
+!/.zsh_profile/
 # I dont want to ignore this but it a file
 !/config.sh
+!/config-mac.sh
 
 # In the nvim directory, ignore everything except the specified directories and files
 !/nvim/plugin/

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if ! pgreg -f "cargo build" > /dev/null; then
+    cargo build
+fi

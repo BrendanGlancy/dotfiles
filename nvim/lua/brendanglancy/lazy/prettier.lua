@@ -16,7 +16,6 @@ return {
     opts = { ensure_installed = { 'prettier' } },
   },
 
-  -- conform
   {
     'stevearc/conform.nvim',
     optional = true,
@@ -46,7 +45,6 @@ return {
     end,
   },
 
-  -- none-ls support
   {
     'nvimtools/none-ls.nvim',
     optional = true,

@@ -35,7 +35,9 @@ return {
         "lua_ls",
         "rust_analyzer",
         "eslint",
-        -- "ts_ls",
+        "ts_ls",
+        "gopls",
+        "svelte",
       },
       handlers = {
         function(server_name) -- default handler (optional)

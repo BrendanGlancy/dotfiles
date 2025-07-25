@@ -32,11 +32,12 @@ autocmd('TextYankPost', {
 })
 
 -- trailing white space
-autocmd({ "BufWritePre" }, {
-    group = ThePrimeagenGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
-})
+-- turn off the trailing white space deletion
+-- autocmd({ "BufWritePre" }, {
+--     group = ThePrimeagenGroup,
+--     pattern = "*",
+--     command = [[%s/\s\+$//e]],
+-- })
 
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,

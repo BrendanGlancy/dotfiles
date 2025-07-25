@@ -11,6 +11,7 @@
 !/i3/
 !/.github/
 !/.zsh_profile/
+!/.zshrc/
 # I dont want to ignore this but it a file
 !/config.sh
 !/config-mac.sh

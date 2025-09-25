@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+DIRS=(
+    "$HOME/work",
+    "$HOME/personal"
+    "$HOME/.config"
+)
+
 switch_to() {
     if [[ -z $TMUX ]]; then
         tmux attact-session -t $1
@@ -20,11 +26,10 @@ hydrate() {
     fi
 }
 
-
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find /Users/s167452/  /Users/s167452/work /Users/s167452/personal -mindepth 1 -maxdepth 2 -type d | fzf)
+    selected=$(find  $HOME/work $HOME/personal -mindepth 1 -maxdepth 2 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

@@ -19,6 +19,7 @@ return {
                     "go%.mod",
                     "go%.sum",
                     "*.test.js",
+                    "__tests__",
                 },
             }
         })

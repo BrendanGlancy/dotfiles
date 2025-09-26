@@ -29,7 +29,7 @@ hydrate() {
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find  $HOME/work $HOME/personal -mindepth 1 -maxdepth 2 -type d | fzf)
+    selected=$(find $HOME/work $HOME/personal $HOME/.config -mindepth 1 -maxdepth 2 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

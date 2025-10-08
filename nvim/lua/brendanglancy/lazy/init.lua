@@ -4,11 +4,6 @@ return {
         name = "plenary"
     },
 
-    {
-        "wakatime/vim-wakatime",
-        lazy = false,
-    },
-
     "eandrju/cellular-automaton.nvim",
 
     -- ssh -R 80:localhost:3000 serveo.net

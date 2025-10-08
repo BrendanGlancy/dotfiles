@@ -44,5 +44,5 @@ vim.keymap.set("n", "<leader>nv", "<cmd>e ~/.config/nvim<CR>");
 vim.keymap.set("n", "<leader>td", "<cmd>e ~/tmp/todo.md<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
--- vim.keymap.set("n", "<leader>kt", "<cmd>e ~/.config/kitty<CR>");
--- vim.keymap.set("n", "<leader>rk", "<cmd>:silent !kill -SIGUSR1 $(pgrep -a kitty)<CR>");
+vim.keymap.set("n", "<leader>kt", "<cmd>e ~/.config/kitty<CR>");
+vim.keymap.set("n", "<leader>rk", "<cmd>:silent !kill -SIGUSR1 $(pgrep -a kitty)<CR>");

@@ -33,11 +33,15 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 vim.keymap.set(
     "n",
     "<leader>ee",
     "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
+)
+vim.keymap.set(
+    "n",
+    "<leader>mm",
+    "oall: main<CR><CR>main: main.c<CR><Tab>gcc main.c -o main<CR><CR>clean:<CR><Tab>rm -f main<Esc>"
 )
 
 vim.keymap.set("n", "<leader>nv", "<cmd>e ~/.config/nvim<CR>");

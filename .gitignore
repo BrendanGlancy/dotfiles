@@ -30,3 +30,4 @@
 
 # Ignore .DS_Store everywhere
 **/.DS_Store
+**/themes

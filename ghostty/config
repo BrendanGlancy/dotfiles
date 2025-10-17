@@ -1,3 +1,21 @@
-font-size = 14
-theme = tokyonight_night
-# background-opacity = 0.9
+# Dynamic theme colors
+config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
+
+# Font
+font-family = "JetBrainsMono Nerd Font Mono"
+font-style = Regular
+font-size = 9
+
+# Window
+window-padding-x = 14
+window-padding-y = 14
+confirm-close-surface=false
+resize-overlay = never
+
+# Cursor styling
+cursor-style = "block"
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Keyboard bindings
+keybind = f11=toggle_fullscreen

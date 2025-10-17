@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 DIRS=(
-    "$HOME/work",
-    "$HOME/personal"
-    "$HOME/.config"
+    "~/work",
+    "~/personal"
+    "~/.config"
 )
 
 switch_to() {

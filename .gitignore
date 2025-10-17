@@ -3,6 +3,7 @@
 
 # But do not ignore the neofetch, kitty, and nvim directories
 !/neofetch/
+!/hypr/
 !/alacritty/
 !/ghostty/
 !/tmux/

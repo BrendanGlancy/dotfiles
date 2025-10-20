@@ -7,7 +7,7 @@ TERM = "xterm-256color"
 normal = { family = "JetBrainsMono Nerd Font Mono" }
 bold = { family = "JetBrainsMono Nerd Font Mono" }
 italic = { family = "JetBrainsMono Nerd Font Mono" }
-size = 14
+size = 13.5
 
 [window]
 padding.x = 14

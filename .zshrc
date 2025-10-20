@@ -32,6 +32,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Use LTS version by default
+nvm use --lts --silent 2>/dev/null || true
 export PNPM_HOME="/Users/s167452/Library/pnpm"
 [ -s "/Users/s167452/.bun/_bun" ] && source "/Users/s167452/.bun/_bun"
 case ":$PATH:" in

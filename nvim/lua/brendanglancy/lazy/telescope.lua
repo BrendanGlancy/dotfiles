@@ -13,13 +13,10 @@ return {
 				file_ignore_patterns = {
 					"node_modules/",
 					"%.lock",
-					"%.env",
 					"build/",
 					"dist/",
 					"go%.mod",
 					"go%.sum",
-					"*.test.js",
-					"__tests__",
 				},
         path_displays = { "smart" },
         sorting_strategy = "ascending",

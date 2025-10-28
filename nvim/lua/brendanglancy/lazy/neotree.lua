@@ -43,6 +43,17 @@ return {
           noremap = true,
           nowait = true,
         },
+        mappings = {
+          ["<cr>"] = "open",
+          ["-"] = "navigate_up",
+          ["%"] = "add",
+          ["d"] = "add_directory",
+          ["D"] = "delete",
+          ["R"] = "rename",
+          ["r"] = "refresh",
+          ["q"] = "close_window",
+          ["?"] = "show_help",
+        },
       },
       filesystem = {
         filtered_items = {

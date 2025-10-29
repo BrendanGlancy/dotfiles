@@ -1,7 +1,6 @@
 require("brendanglancy.set")
 require("brendanglancy.remap")
 require("brendanglancy.terminal")
-
 require("brendanglancy.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
@@ -33,9 +32,9 @@ autocmd("TextYankPost", {
 
 -- trailing whitespace deletion
 autocmd({ "BufWritePre" }, {
-    group = ThePrimeagenGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
+	group = ThePrimeagenGroup,
+	pattern = "*",
+	command = [[%s/\s\+$//e]],
 })
 
 autocmd("LspAttach", {

@@ -10,16 +10,15 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				file_ignore_patterns = {
-					"node_modules/",
-					"%.lock",
-					"build/",
-					"dist/",
-					"go%.mod",
-					"go%.sum",
+				path_display = { "truncate" },
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						preview_width = 0.45,
+						width = 0.95,
+						height = 0.95,
+					},
 				},
-				path_displays = { "smart" },
-				sorting_strategy = "ascending",
 			},
 		})
 
@@ -27,6 +26,7 @@ return {
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 		vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
 		vim.keymap.set("n", "<leader>sr", builtin.lsp_references, {})
+		vim.keymap.set("n", "<leader>td", builtin.lsp_type_definitions, {})
 		vim.keymap.set("n", "<leader>fw", function()
 			local word = vim.fn.expand("<cword>")
 			builtin.grep_string({ search = word })

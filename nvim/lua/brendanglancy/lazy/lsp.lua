@@ -41,6 +41,7 @@ return {
 				-- "gopls",
 				"svelte",
 				"clangd",
+				"jdtls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -63,24 +64,6 @@ return {
 						},
 					})
 				end,
-				-- ["clangd"] = function()
-				--     require("lspconfig").clangd.setup {
-				--         capabilities = capabilities,
-				--         cmd = {
-				--             "clangd",
-				--             "--all-scopes-completion",
-				--             "--background-index",
-				--         },
-				--         filetypes = {
-				--             "c",
-				--             "cpp",
-				--             "objc",
-				--             "objcpp",
-				--             "cuda",
-				--             "proto",
-				--         },
-				--     }
-				-- end,
 			},
 		})
 

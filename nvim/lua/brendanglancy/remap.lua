@@ -43,7 +43,7 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>bb", "i#!/bin/bash<Esc>")
 
 vim.keymap.set("n", "<leader>nv", "<cmd>e ~/.config/nvim<CR>")
-vim.keymap.set("n", "<leader>td", "<cmd>e ~/tmp/todo.md<CR>")
+vim.keymap.set("n", "<leader>to", "<cmd>e ~/tmp/todo.md<CR>")
 vim.keymap.set("n", "<leader>dt", "<cmd>e ~/tmp/dt.md<CR>")
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 

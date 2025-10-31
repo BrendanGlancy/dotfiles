@@ -10,7 +10,14 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				path_display = { "truncate" },
+				file_ignore_patterns = {
+					"node_modules/",
+					"%.lock",
+					"build/",
+					"dist/",
+					"go%.mod",
+					"go%.sum",
+				},
 				layout_strategy = "horizontal",
 				layout_config = {
 					horizontal = {
@@ -42,6 +49,13 @@ return {
 		vim.keymap.set("n", "<leader>fz", function()
 			local word = vim.fn.expand("<cword>")
 			builtin.current_buffer_fuzzy_find({ search = word })
+		end)
+		vim.keymap.set("n", "<leader>rg", function()
+			builtin.live_grep({
+				additional_args = function()
+					return { "-i" }
+				end,
+			})
 		end)
 	end,
 }

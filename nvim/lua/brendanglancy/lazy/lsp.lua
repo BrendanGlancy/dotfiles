@@ -13,6 +13,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
+		"mfussenegger/nvim-jdtls",
 	},
 
 	config = function()
@@ -41,7 +42,6 @@ return {
 				-- "gopls",
 				"svelte",
 				"clangd",
-				"jdtls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -63,6 +63,9 @@ return {
 							},
 						},
 					})
+				end,
+				["jdtls"] = function()
+					-- Use nvim-jdtls instead of lspconfig, configured via autocmd below
 				end,
 			},
 		})
@@ -100,6 +103,62 @@ return {
 				header = "",
 				prefix = "",
 			},
+		})
+
+		-- Setup nvim-jdtls for Java files
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "java",
+			callback = function()
+				local jdtls = require("jdtls")
+				local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+				local workspace_dir = vim.fn.expand("~/.cache/jdtls/workspace/" .. project_name)
+
+				local config = {
+					cmd = {
+						"/usr/lib/jvm/java-21-openjdk/bin/java",
+						"-Declipse.application=org.eclipse.jdt.ls.core.id1",
+						"-Dosgi.bundles.defaultStartLevel=4",
+						"-Declipse.product=org.eclipse.jdt.ls.core.product",
+						"-Dlog.protocol=true",
+						"-Dlog.level=ALL",
+						"-Xmx1g",
+						"--add-modules=ALL-SYSTEM",
+						"--add-opens",
+						"java.base/java.util=ALL-UNNAMED",
+						"--add-opens",
+						"java.base/java.lang=ALL-UNNAMED",
+						"-jar",
+						vim.fn.glob(vim.fn.stdpath("data") .. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+						"-configuration",
+						vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_linux",
+						"-data",
+						workspace_dir,
+					},
+					root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }),
+					settings = {
+						java = {
+							configuration = {
+								runtimes = {
+									{
+										name = "JavaSE-17",
+										path = "/usr/lib/jvm/java-17-openjdk",
+									},
+									{
+										name = "JavaSE-21",
+										path = "/usr/lib/jvm/java-21-openjdk",
+									},
+								},
+							},
+						},
+					},
+					init_options = {
+						bundles = {},
+					},
+					capabilities = capabilities,
+				}
+
+				jdtls.start_or_attach(config)
+			end,
 		})
 	end,
 }

@@ -64,9 +64,6 @@ return {
 						},
 					})
 				end,
-				["jdtls"] = function()
-					-- Use nvim-jdtls instead of lspconfig, configured via autocmd below
-				end,
 			},
 		})
 

@@ -42,6 +42,7 @@ return {
 				-- "gopls",
 				"svelte",
 				"clangd",
+				"jdtls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -63,6 +64,9 @@ return {
 							},
 						},
 					})
+				end,
+				["jdtls"] = function()
+					-- Don't set up with lspconfig, nvim-jdtls handles it via autocmd below
 				end,
 			},
 		})
@@ -125,7 +129,9 @@ return {
 						"--add-opens",
 						"java.base/java.lang=ALL-UNNAMED",
 						"-jar",
-						vim.fn.glob(vim.fn.stdpath("data") .. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+						vim.fn.glob(
+							vim.fn.stdpath("data") .. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"
+						),
 						"-configuration",
 						vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_linux",
 						"-data",

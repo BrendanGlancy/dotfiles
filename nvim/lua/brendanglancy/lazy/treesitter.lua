@@ -1,6 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-context",
+	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			-- A list of parser names, or "all"
@@ -51,5 +54,13 @@ return {
 		}
 
 		vim.treesitter.language.register("templ", "templ")
+
+		-- Setup treesitter-context to show current function
+		require("treesitter-context").setup({
+			enable = true,
+			max_lines = 3,
+			trim_scope = "outer",
+			mode = "cursor",
+		})
 	end,
 }

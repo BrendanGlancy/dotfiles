@@ -1,9 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-context",
-	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			-- A list of parser names, or "all"
@@ -28,8 +25,11 @@ return {
 			-- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
 			auto_install = true,
 
+			-- Disabled: treesitter's experimental indentexpr (nvim_treesitter#indent)
+			-- produces erratic/compounding indentation while typing (esp. TS/JS).
+			-- With this off, Neovim falls back to its reliable built-in indentexpr.
 			indent = {
-				enable = true,
+				enable = false,
 			},
 
 			highlight = {
@@ -54,13 +54,5 @@ return {
 		}
 
 		vim.treesitter.language.register("templ", "templ")
-
-		-- Setup treesitter-context to show current function
-		require("treesitter-context").setup({
-			enable = true,
-			max_lines = 3,
-			trim_scope = "outer",
-			mode = "cursor",
-		})
 	end,
 }

@@ -1,12 +1,5 @@
-! Hide the recommended videos sidebar
-www.youtube.com##.ytd-watch-next-secondary-results-renderer
-
-
-! Hide the recommended videos on the homepage
-www.youtube.com##ytd-browse:is([page-subtype="home"]) #primary #contents
-
-! Hide Shorts and related elements
-www.youtube.com##ytd-rich-grid-renderer:has(ytd-rich-shelf-renderer[is-shorts])
+! Hide the Shorts shelf on the homepage (keeps the rest of the recommended feed)
+www.youtube.com##ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts])
 www.youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
 ! Hide all videos containing the phrase "#shorts"
